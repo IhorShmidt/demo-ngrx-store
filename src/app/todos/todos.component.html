@@ -1,0 +1,16 @@
+<ul>
+  <li *ngFor="let todo of todos$ | async">
+    <span (click)="markDone(todo)">Label: <span
+      [ngStyle]="{'background-color': todo.complete ? 'green' : ''}"
+      >
+      {{todo.label}}</span>
+    Complete: {{todo.complete}}
+      </span>
+    <button (click)="removeTodo(todo)">X</button>
+  </li>
+</ul>
+
+
+<input type="text" #userInput>
+
+<button (click)="addAtodo(userInput.value)">Add todo</button>
